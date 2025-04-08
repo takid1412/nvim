@@ -6,4 +6,4 @@ local opts = { noremap = true, silent = true }
 
 keymap.set("n", "<C-a>", "ggVG", { desc = "Select All" })
 keymap.set("v", "<C-c>", '"+y', { noremap = true })
-keymap.set("n", "<leader>fo", "1G=G``", { noremap = true })
+keymap.set("n", "<leader>fo", "<cmd>ReindentFile<CR>", { noremap = true, desc = "ReIndent File" })

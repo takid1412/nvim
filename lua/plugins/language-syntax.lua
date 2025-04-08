@@ -1,4 +1,14 @@
 return {
     { "vim-scripts/iptables" },
-    { "spacewander/openresty-vim" }
+    {
+        "chr4/nginx.vim",
+        config = function()
+            vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+                pattern = "/etc/nginx/**/*.lua",
+                callback = function()
+                    vim.bo.filetype = "lua"
+                end,
+            })
+        end,
+    },
 }

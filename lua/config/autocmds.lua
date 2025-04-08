@@ -1,21 +1,3 @@
--- openresty syntax
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-    pattern = { "/etc/nginx/**.conf" },
-    command = "set filetype=nginx",
-})
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-    pattern = { "/etc/nginx/**.lua" },
-    command = "set filetype=lua",
-})
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "nginx",
-    callback = function()
-        vim.cmd([[
-      syntax region ngxLua start=/\(\<content_by_lua\|access_by_lua\|header_filter_by_lua\|body_filter_by_lua\|init_by_lua\|init_worker_by_lua\)\(_block\)* {/ end=/}/ contains=@lua
-    ]])
-    end,
-})
-
 -- iptables syntax
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = { "*/iptables/*", "**iptables", "*/ip6tables/*", "*ip6tables*" },
@@ -45,3 +27,10 @@ vim.api.nvim_create_autocmd("VimLeavePre", {
         io.write("\027]111\027\\")
     end,
 })
+
+-- Reindent file
+vim.api.nvim_create_user_command("ReindentFile", function()
+    local pos = vim.api.nvim_win_get_cursor(0) -- save cursor
+    vim.cmd("normal! gg=G") -- reindent
+    vim.api.nvim_win_set_cursor(0, pos) -- restore cursor
+end, { desc = "Reindent whole file" })
