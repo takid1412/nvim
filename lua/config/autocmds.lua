@@ -3,6 +3,10 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = { "/etc/nginx/**.conf" },
     command = "set filetype=nginx",
 })
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = { "/etc/nginx/**.lua" },
+    command = "set filetype=lua",
+})
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "nginx",
     callback = function()
