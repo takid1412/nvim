@@ -52,7 +52,7 @@ vnoremap <C-d> "_D<Esc>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-inoremap <C-d> <Esc>"_ddj^i
+inoremap <C-d> <Esc>"_dd^i
 
 " Copy Paste command
 vnoremap <C-c> "+y
@@ -83,9 +83,12 @@ vnoremap <Tab> >gv
 
 "nmap gd :action GotoDeclaration<CR>
 
-nnoremap <C-/> :action CommentByLineComment<CR>
-inoremap <C-/> <Esc>:action CommentByLineComment<CR>
-vnoremap <C-/> <Esc>:action CommentByLineComment<CR>
+sethandler <C-/> a:ide
+sethandler <C-r> a:ide
+
+" nnoremap <C-/> :action CommentByLineComment<CR>
+" inoremap <C-/> <Esc>:action CommentByLineComment<CR>
+" vnoremap <C-/> <Esc>:action CommentByLineComment<CR>
 
 
 
