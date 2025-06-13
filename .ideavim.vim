@@ -85,6 +85,7 @@ vnoremap <Tab> >gv
 
 sethandler <C-/> a:ide
 sethandler <C-r> a:ide
+sethandler <C-s> a:ide
 
 " nnoremap <C-/> :action CommentByLineComment<CR>
 " inoremap <C-/> <Esc>:action CommentByLineComment<CR>
