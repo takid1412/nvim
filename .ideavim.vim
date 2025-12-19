@@ -35,12 +35,13 @@ Plug 'tpope/vim-surround'
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
 
-set nu
+"set nu
 set relativenumber
 set smartindent
 "set functiontextobj
 set ideajoin
 set clipboard=^ideaput
+set editorconfig
 
 nnoremap <leader>; :s/$/;/<CR>
 nnoremap <C-d> "_dd
