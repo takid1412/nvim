@@ -1,8 +1,7 @@
 return {
     { "vim-scripts/iptables" },
     {
-        -- "takid1412/nvim-treesitter-openresty",
-        dir = "~/Dev/OtherProjects/nvim-treesitter-nginx",
+        "takid1412/nvim-treesitter-openresty",
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
         },
